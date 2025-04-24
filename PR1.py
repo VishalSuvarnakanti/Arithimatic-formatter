@@ -1,5 +1,8 @@
 def arithmetic_arranger(problems, show_answers=False):
 
+    if len(problems)>5:
+        return "Error. Too many problems"
+
     num3 = []
 
     for i in problems:
@@ -7,12 +10,10 @@ def arithmetic_arranger(problems, show_answers=False):
         for n in i:
             num = []
             if n.isdigit():
-                num.append(n)
+                num.append(int(n))
             else:
                 continue
-            run = ''.join(num)
-            run2 = int(run)
-            num2.append(run2)
+            num2.append(num)
         num3.append(num2)
 
     return num3
