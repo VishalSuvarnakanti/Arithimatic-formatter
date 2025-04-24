@@ -2,10 +2,10 @@ def addition(word):
     sum = int(word[0]) + int(word[1])
     return sum
 
-def subtraction(word):
-    num1 = int(word[0])
-    num2 = int(word[1])
-    difference = num1-num2
+def subtraction(word2):
+    num1 = int(word2[0])
+    num2 = int(word2[1])
+    difference = num1 - num2
     return difference
 
 def arithmetic_arranger(problems, show_answers=False):
@@ -21,9 +21,9 @@ def arithmetic_arranger(problems, show_answers=False):
             sum = addition(word)
             line1.append(sum)
         else:
-            word = part.split('-')
-            difference = subtraction(word)
-            line1.append(word)
+            word2 = part.split('-')
+            difference = subtraction(word2)
+            line1.append(difference)
             
     return line1
     
