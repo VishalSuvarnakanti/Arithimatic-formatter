@@ -1,3 +1,13 @@
+def print_lines(line1, line2, line3):
+    final_line = []
+    final_line.append(line1)
+    final_line.append(line2)
+    final_line.append(line3)
+
+    for i in range(len(final_line)):
+        if (i % 2) == 0:  
+            print(final_line[i])
+
 def addition(word):
     sum = int(word[0]) + int(word[1])
     return sum
@@ -42,7 +52,7 @@ def arithmetic_arranger(problems, show_answers=False):
             return "Error"
         
         
-    return line3
+    return print_lines(line1, line2, line3)
 
             
 sum = arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
