@@ -23,10 +23,14 @@ def arithmetic_arranger(problems, show_answers=False):
         if '+' in part:
             word = part.split('+')
             sum = addition(word)
+            line1.append(int(word[0]))
+            line2.append(int(word[1]))
             line3.append(sum)
         elif '-' in part:
             word2 = part.split('-')
             difference = subtraction(word2)
+            line1.append(int(word2[0]))
+            line2.append(int(word2[1]))
             line3.append(difference)
         elif not operator1.isdigit() or not operator2.isdigit():
             return "Error: Numbers must only contain digits."
@@ -38,11 +42,8 @@ def arithmetic_arranger(problems, show_answers=False):
             return "Error"
         
         
-
     return line3
 
             
 sum = arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 print(sum)
-
-
