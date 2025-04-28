@@ -1,11 +1,19 @@
 def print_lines(line1, line2, line3):
+    newline1 = [str(i) for i in line1]
+    newline2 = [str(i) for i in line2]
+    newline3 = [str(i) for i in line3]
     final_line = []
-    final_line.append(line1)
-    final_line.append(line2)
-    final_line.append(line3)
+    final_line.append(newline1)
+    final_line.append(newline2)
+    final_line.append(newline3)
 
     for i in range(len(final_line)):
-            print(*final_line[i] , end='\n')
+        for n in final_line[i]:
+            print(n.rjust(6), end='')
+        print(end='\n')
+
+
+#           print(*final_line[i] , end='\n')
 
 def addition(word):
     sum = int(word[0]) + int(word[1])
