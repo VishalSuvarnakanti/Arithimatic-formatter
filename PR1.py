@@ -5,8 +5,7 @@ def print_lines(line1, line2, line3):
     final_line.append(line3)
 
     for i in range(len(final_line)):
-        if (i % 2) == 0:  
-            print(final_line[i])
+            print(*final_line[i] , end='\n')
 
 def addition(word):
     sum = int(word[0]) + int(word[1])
