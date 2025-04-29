@@ -14,11 +14,6 @@ def print_lines(line1, line2, line3):
 
     return '\n'.join(output_lines)
 
-#    for i in range(len(final_line)):
-#        for n in final_line[i]:
-#            print(n.rjust(6), end='')
-#        print(end='\n')
-
 def addition(word):
     sum = int(word[0]) + int(word[1])
     return sum
