@@ -2,15 +2,22 @@ def print_lines(line1, line2, line3):
     newline1 = [str(i) for i in line1]
     newline2 = [str(i) for i in line2]
     newline3 = [str(i) for i in line3]
-    final_line = []
-    final_line.append(newline1)
-    final_line.append(newline2)
-    final_line.append(newline3)
+    final_line = [newline1, newline2, newline3]
+
+    output_lines = []
 
     for i in range(len(final_line)):
+        line = ''
         for n in final_line[i]:
-            print(n.rjust(6), end='')
-        print(end='\n')
+            line += n.rjust(6)
+        output_lines.append(line)
+
+    return '\n'.join(output_lines)
+
+#    for i in range(len(final_line)):
+#        for n in final_line[i]:
+#            print(n.rjust(6), end='')
+#        print(end='\n')
 
 def addition(word):
     sum = int(word[0]) + int(word[1])
@@ -59,5 +66,4 @@ def arithmetic_arranger(problems, show_answers=False):
     return print_lines(line1, line2, line3)
 
             
-sum = arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
-print(sum)
+print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
