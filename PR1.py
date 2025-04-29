@@ -9,7 +9,7 @@ def print_lines(line1, line2, line3):
     for i in range(len(final_line)):
         line = ''
         for n in final_line[i]:
-            line += n.rjust(6)
+            line += n.rjust(8)
         output_lines.append(line)
 
     return '\n'.join(output_lines)
