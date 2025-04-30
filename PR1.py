@@ -1,4 +1,4 @@
-def print_lines(line1, line2, line3):
+def print_lines(line1, line2, line3, show_answers):
     newline1 = [str(i) for i in line1]
     newline2 = [str(i) for i in line2]
     newline3 = [str(i) for i in line3]
@@ -6,11 +6,30 @@ def print_lines(line1, line2, line3):
 
     output_lines = []
 
-    for i in range(len(final_line)):
-        line = ''
-        for n in final_line[i]:
-            line += n.rjust(8)
-        output_lines.append(line)
+    if show_answers==False:
+        for i in range(len(final_line)-1):
+            line = ''
+            for n in final_line[i]:
+               line += n.rjust(8)
+            output_lines.append(line)
+    else:
+        for i in range(len(final_line)+1):
+            line = ''
+            for n in final_line[i]:
+                if i==2:
+                    line+='------'.rjust(8)
+                else:
+                    line += n.rjust(8)
+            output_lines.append(line)
+
+        
+
+#    for i in range(len(final_line)):
+#        line = ''
+#        for n in final_line[i]:
+#            line += n.rjust(8)
+#        output_lines.append(line)
+              
 
     return '\n'.join(output_lines)
 
@@ -58,7 +77,7 @@ def arithmetic_arranger(problems, show_answers=False):
             return "Error"
         
         
-    return print_lines(line1, line2, line3)
+    return print_lines(line1, line2, line3, show_answers)
 
             
-print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
+print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"],True))
