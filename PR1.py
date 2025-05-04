@@ -1,3 +1,5 @@
+import re
+
 def print_lines(line1, line2, line3, show_answers):
     newline1 = [str(i) for i in line1]
     newline2 = [str(i) for i in line2]
@@ -67,12 +69,16 @@ def arithmetic_arranger(problems, show_answers=False):
             line1.append(int(word2[0]))
             line2.append(int(word2[1]))
             line3.append(difference)
-        elif not operator1.isdigit() or not operator2.isdigit():
-            return "Error: Numbers must only contain digits."
-        elif len(operator1)>4 or len(operator2)>4:
-            return "Error: Numbers cannot be more than four digits."
-        elif operand not in ['+','-']:
+        elif (re.search("[^\s0-9.+-", part)):
+            return "Error: Numbers must only contain digits"
+        elif (re.search("[/]", part) or re.search("[*]", part)):
             return "Error: Operator must be '+' or '-'"
+#        elif not operator1.isdigit() or not operator2.isdigit():
+#            return "Error: Numbers must only contain digits."
+#        elif len(operator1)>4 or len(operator2)>4:
+#            return "Error: Numbers cannot be more than four digits."
+#        elif operand not in ['+','-']:
+#            return "Error: Operator must be '+' or '-'"
         else:
             return "Error"
         
