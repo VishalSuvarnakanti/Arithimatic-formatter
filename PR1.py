@@ -56,19 +56,22 @@ def arithmetic_arranger(problems, show_answers=False):
     
     for part in problems:
         problem = part.split()
-        operator1, operand, operator2 = problem
-        if '+' in part:
-            word = part.split('+')
-            sum = addition(word)
-            line1.append(int(word[0]))
-            line2.append(int(word[1]))
-            line3.append(sum)
-        elif '-' in part:
-            word2 = part.split('-')
-            difference = subtraction(word2)
-            line1.append(int(word2[0]))
-            line2.append(int(word2[1]))
-            line3.append(difference)
+        operand1, operator, operand2 = problem
+        sum = ""
+        if operator == "+":
+            sum = str(int(operand1) + int(operand2))
+#            word = part.split('+')
+#            sum = addition(word)
+#            line1.append(int(word[0]))
+#            line2.append(int(word[1]))
+#            line3.append(sum)
+        elif operator == "-":
+            sum = str(int(operand1) - int(operand2))
+#            word2 = part.split('-')
+#            difference = subtraction(word2)
+#            line1.append(int(word2[0]))
+#            line2.append(int(word2[1]))
+#            line3.append(difference)
         elif (re.search("[^\s0-9.+-", part)):
             return "Error: Numbers must only contain digits"
         elif (re.search("[/]", part) or re.search("[*]", part)):
