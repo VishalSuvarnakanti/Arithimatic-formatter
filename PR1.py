@@ -76,6 +76,8 @@ def arithmetic_arranger(problems, show_answers=False):
             return "Error: Numbers must only contain digits"
         elif (re.search("[/]", part) or re.search("[*]", part)):
             return "Error: Operator must be '+' or '-'"
+        elif (len(operand1)>=5 or len(operand2)>=5):
+            return "Error: Numbers cannot be more than 4 digits"
 #        elif not operator1.isdigit() or not operator2.isdigit():
 #            return "Error: Numbers must only contain digits."
 #        elif len(operator1)>4 or len(operator2)>4:
