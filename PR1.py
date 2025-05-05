@@ -20,8 +20,7 @@ def arithmetic_arranger(problems, show_answers=False):
         elif (re.search("[/]", part) or re.search("[*]", part)):
             return "Error: Operator must be '+' or '-'"
         elif (len(operand1)>=5 or len(operand2)>=5):
-            return "Error: Numbers cannot be more than four digits"
-        
+            return "Error: Numbers cannot be more than four digits"        
         elif operator == "+":
             sum = str(int(operand1) + int(operand2))    
         elif operator == "-":
