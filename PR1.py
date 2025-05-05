@@ -63,26 +63,27 @@ def arithmetic_arranger(problems, show_answers=False):
         problem = part.split()
         operand1, operator, operand2 = problem
         sum = ""
-        if operator == "+":
-            sum = str(int(operand1) + int(operand2))
+        if (re.search("[^\s0-9.+-", part)):
+            return "Error: Numbers must only contain digits"
 #            word = part.split('+')
 #            sum = addition(word)
 #            line1.append(int(word[0]))
 #            line2.append(int(word[1]))
 #            line3.append(sum)
-        elif operator == "-":
-            sum = str(int(operand1) - int(operand2))
+        elif (re.search("[/]", part) or re.search("[*]", part)):
+            return "Error: Operator must be '+' or '-'"
 #            word2 = part.split('-')
 #            difference = subtraction(word2)
 #            line1.append(int(word2[0]))
 #            line2.append(int(word2[1]))
 #            line3.append(difference)
-        elif (re.search("[^\s0-9.+-", part)):
-            return "Error: Numbers must only contain digits"
-        elif (re.search("[/]", part) or re.search("[*]", part)):
-            return "Error: Operator must be '+' or '-'"
+        
         elif (len(operand1)>=5 or len(operand2)>=5):
-            return "Error: Numbers cannot be more than 4 digits"
+            return "Error: Numbers cannot be more than four digits"
+        elif operator == "+":
+            sum = str(int(operand1) + int(operand2))    
+        elif operator == "-":
+            sum = str(int(operand1) - int(operand2))
 #        elif not operator1.isdigit() or not operator2.isdigit():
 #            return "Error: Numbers must only contain digits."
 #        elif len(operator1)>4 or len(operator2)>4:
@@ -92,6 +93,11 @@ def arithmetic_arranger(problems, show_answers=False):
         else:
             return "Error"
         
+        length = max(len(operand1), len(operand2))
+        top = str(operand1).rjust(length)
+        string = operator + str(operand2).rjust(length-1)
+        line = ""
+        result = str(sum).rjust(length)
 
     return print_lines(line1, line2, line3, show_answers)
 
