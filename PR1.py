@@ -56,4 +56,4 @@ def arithmetic_arranger(problems, show_answers=False):
 
     return answer
 
-print(arithmetic_arranger(["1 + 2", "1 - 9380"],True))
+print(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"],True))
