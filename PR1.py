@@ -53,6 +53,11 @@ def arithmetic_arranger(problems, show_answers=False):
     line1 = []
     line2 = []
     line3 = []
+
+    first = ''
+    second = ''
+    lines = ''
+
     
     for part in problems:
         problem = part.split()
